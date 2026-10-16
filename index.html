@@ -71,6 +71,25 @@ ol.steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:3
 .final p{margin:0 0 20px;color:var(--muted)}
 footer{font-size:14px;color:var(--muted)}
 footer a{color:var(--accent);font-weight:700}
+
+.voice-head{display:flex;align-items:center;gap:12px;padding:4px 4px 8px}
+.mic{width:40px;height:40px;border-radius:20px;background:var(--accent);display:flex;align-items:center;justify-content:center;flex:0 0 40px;position:relative}
+.mic svg{width:20px;height:20px;fill:none;stroke:var(--accent-ink);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.mic::after{content:"";position:absolute;inset:-6px;border-radius:26px;border:2px solid var(--accent);opacity:.35;animation:ring 1.8s ease-out infinite}
+@keyframes ring{0%{transform:scale(.85);opacity:.5}100%{transform:scale(1.25);opacity:0}}
+.voice-head b{display:block;font-size:15px;font-weight:800}
+.voice-head span{font-size:13.5px;color:var(--muted)}
+.vmsg{max-width:90%;padding:12px 14px;border-radius:16px;display:flex;flex-direction:column;gap:8px}
+.vmsg.ai{background:var(--bg);border:1px solid var(--line);border-bottom-left-radius:6px;align-self:flex-start}
+.vmsg.me{background:var(--accent);color:var(--accent-ink);border-bottom-right-radius:6px;align-self:flex-end}
+.vrow{display:flex;align-items:center;gap:10px}
+.who{font-size:12.5px;font-weight:800;opacity:.75;white-space:nowrap}
+.wave{display:flex;align-items:center;gap:3px;height:26px}
+.wave i{display:block;width:3px;border-radius:2px;background:currentColor;opacity:.55}
+.vmsg.ai .wave i{background:var(--accent);opacity:.7}
+.dur{font-size:12.5px;font-weight:700;opacity:.7;margin-left:auto}
+.said{font-size:14px;line-height:1.4;opacity:.85}
+@media (prefers-reduced-motion: reduce){.mic::after{animation:none}}
 @media (prefers-reduced-motion: reduce){.btn{transition:none}}
 </style>
 </head>
@@ -82,17 +101,18 @@ footer a{color:var(--accent);font-weight:700}
     <h1>Подружка для розмов англійською</h1>
     <p class="lede">Готовий промпт для ChatGPT: 10 хвилин живої розмови з «американцем» голосом, а в кінці — розбір, наскільки природно ви звучите і що сказати інакше.</p>
     <div class="buy">
-      <a class="btn" href="https://buy.stripe.com/9B6aEW54A9dJ36f94f2ch3f">Купити за $5</a>
+      <a class="btn" href="https://buy.stripe.com/eVqeVc2Ws2PlayH80b2ch3g">Купити за $5</a>
       <p class="fine">Разовий платіж. Доступ відкривається одразу після оплати.</p>
     </div>
   </section>
 
   <section>
-    <h2>Так виглядає розмова</h2>
-    <div class="chat" aria-label="Приклад розмови і звіту">
-      <div class="msg ai">Hey! So what did you get up to this weekend? Anything fun?</div>
-      <div class="msg me">I was at home and I am agree that it was boring.</div>
-      <div class="msg ai">Ha, honestly, sometimes a lazy weekend is exactly what you need. What did you end up doing all day?</div>
+    <h2>Так звучить розмова</h2>
+    <div class="chat" aria-label="Приклад голосової розмови і звіту">
+      <div class="voice-head"><div class="mic"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/></svg></div><div><b>Голосовий режим ChatGPT</b><span>Ви говорите вголос, він відповідає голосом</span></div></div>
+      <div class="vmsg ai"><div class="vrow"><span class="who">Він</span><span class="wave" aria-hidden="true"><i style="height:24px"></i><i style="height:12px"></i><i style="height:18px"></i><i style="height:6px"></i><i style="height:9px"></i><i style="height:14px"></i><i style="height:9px"></i><i style="height:24px"></i><i style="height:22px"></i><i style="height:6px"></i><i style="height:14px"></i><i style="height:16px"></i><i style="height:6px"></i><i style="height:9px"></i><i style="height:18px"></i><i style="height:18px"></i><i style="height:9px"></i><i style="height:16px"></i><i style="height:9px"></i><i style="height:14px"></i><i style="height:18px"></i><i style="height:6px"></i></span><span class="dur">0:04</span></div><div class="said">«Hey! So what did you get up to this weekend? Anything fun?»</div></div>
+      <div class="vmsg me"><div class="vrow"><span class="who">Ви</span><span class="wave" aria-hidden="true"><i style="height:22px"></i><i style="height:9px"></i><i style="height:16px"></i><i style="height:22px"></i><i style="height:6px"></i><i style="height:22px"></i><i style="height:22px"></i><i style="height:18px"></i><i style="height:6px"></i><i style="height:16px"></i><i style="height:6px"></i><i style="height:14px"></i><i style="height:12px"></i><i style="height:20px"></i><i style="height:18px"></i><i style="height:12px"></i><i style="height:14px"></i><i style="height:9px"></i></span><span class="dur">0:05</span></div><div class="said">«I was at home and I am agree that it was boring.»</div></div>
+      <div class="vmsg ai"><div class="vrow"><span class="who">Він</span><span class="wave" aria-hidden="true"><i style="height:22px"></i><i style="height:20px"></i><i style="height:14px"></i><i style="height:12px"></i><i style="height:9px"></i><i style="height:22px"></i><i style="height:22px"></i><i style="height:16px"></i><i style="height:24px"></i><i style="height:9px"></i><i style="height:14px"></i><i style="height:9px"></i><i style="height:22px"></i><i style="height:6px"></i><i style="height:22px"></i><i style="height:16px"></i><i style="height:10px"></i><i style="height:14px"></i><i style="height:18px"></i><i style="height:24px"></i><i style="height:10px"></i><i style="height:22px"></i><i style="height:10px"></i><i style="height:24px"></i><i style="height:20px"></i><i style="height:16px"></i></span><span class="dur">0:06</span></div><div class="said">«Ha, honestly, sometimes a lazy weekend is exactly what you need. What did you end up doing all day?»</div></div>
       <div class="report">
         <h3>Звіт після розмови</h3>
         <p class="score">6 <small>з 10 — наскільки живо ви звучите, рівень B1</small></p>
@@ -101,7 +121,7 @@ footer a{color:var(--accent);font-weight:700}
         <div class="pair"><span>Для словника: <strong>end up doing</strong> — зрештою щось зробити</span></div>
       </div>
     </div>
-    <p class="caption">Приклад. Ваш звіт буде складено за вашою розмовою.</p>
+    <p class="caption">Приклад. Розмова йде голосом, а звіт ChatGPT пише текстом у кінці, за вашою розмовою.</p>
   </section>
 
   <section>
@@ -109,7 +129,7 @@ footer a{color:var(--accent);font-weight:700}
     <ul class="list">
       <li><strong>Готовий промпт</strong>Копіюєте одним натисканням і вставляєте в ChatGPT. Нічого налаштовувати не треба.</li>
       <li><strong>Розмову, яка підлаштовується під вас</strong>ChatGPT сам визначає ваш рівень і говорить трохи складніше, ніж ви: зрозуміло, але з новими фразами.</li>
-      <li><strong>Звіт українською після кожної розмови</strong>Оцінка від 1 до 10, ваш приблизний рівень, фрази, які звучали «по-підручниковому», і як їх сказав би американець.</li>
+      <li><strong>Звіт українською після кожної розмови</strong>Оцінка від 1 до 10, ваш приблизний рівень, фрази, які звучали як з підручника, і як їх сказав би американець.</li>
       <li><strong>Сленг і фразові дієслова для словника</strong>5–8 виразів з розмови з поясненням і прикладом.</li>
       <li><strong>Інструкцію з голосовим режимом</strong>Покроково, зі скріншотами: як говорити з ChatGPT голосом, а не писати.</li>
     </ul>
@@ -129,7 +149,7 @@ footer a{color:var(--accent);font-weight:700}
     <ol class="steps">
       <li>Оплачуєте $5 — одразу відкривається сторінка з промптом.</li>
       <li>Копіюєте промпт і вставляєте в ChatGPT.</li>
-      <li>Вмикаєте голосовий режим і 10 хвилин просто розмовляєте.</li>
+      <li>Вмикаєте голосовий режим і 10 хвилин розмовляєте вголос, як з людиною.</li>
       <li>Отримуєте звіт і повторюєте, коли хочете: теми щоразу інші.</li>
     </ol>
   </section>
@@ -147,7 +167,7 @@ footer a{color:var(--accent);font-weight:700}
     <h2>Почніть говорити вже сьогодні</h2>
     <p>10 хвилин на день — і англійська перестає бути чимось, що ви лише розумієте.</p>
     <div class="buy">
-      <a class="btn" href="https://buy.stripe.com/9B6aEW54A9dJ36f94f2ch3f">Купити за $5</a>
+      <a class="btn" href="https://buy.stripe.com/eVqeVc2Ws2PlayH80b2ch3g">Купити за $5</a>
       <p class="fine">Оплата карткою через Stripe.</p>
     </div>
   </section>
