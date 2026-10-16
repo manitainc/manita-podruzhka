@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Подружка для розмов англійською — Manita</title>
+<meta name="description" content="Готовий промпт для ChatGPT: 10 хвилин живої розмови англійською з «американцем» і розбір, як природно ви звучите.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --surface:#F3F5FA; --ink:#1A1D26; --muted:#4A5060; --line:#D9DEE8;
+  --accent:#2448C9; --accent-ink:#FFFFFF; --bubble:#E8EDFB; --good:#1F7A5A; --bad:#9A3B24;
+  color-scheme:light; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#12141B; --surface:#1C2030; --ink:#EEF0F6; --muted:#A9B0C2; --line:#2E3446;
+    --accent:#6F8BFF; --accent-ink:#0E1220; --bubble:#232A44; --good:#5CC79A; --bad:#F09A7E; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#12141B; --surface:#1C2030; --ink:#EEF0F6; --muted:#A9B0C2; --line:#2E3446;
+  --accent:#6F8BFF; --accent-ink:#0E1220; --bubble:#232A44; --good:#5CC79A; --bad:#F09A7E; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Manrope','Segoe UI',system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.55}
+.wrap{max-width:680px;margin:0 auto;padding:36px 20px 64px}
+.brand{font-weight:700;font-size:14px;color:var(--muted);margin:0 0 32px}
+h1{font-family:'Unbounded','Manrope',sans-serif;font-weight:700;font-size:clamp(30px,7.5vw,46px);line-height:1.1;letter-spacing:-0.02em;margin:0 0 16px;text-wrap:balance}
+h2{font-family:'Unbounded','Manrope',sans-serif;font-weight:600;font-size:clamp(21px,5vw,26px);line-height:1.2;margin:0 0 18px;text-wrap:balance}
+.lede{color:var(--muted);font-size:18px;margin:0 0 28px;max-width:32em}
+section{margin:0 0 56px}
+.buy{display:flex;flex-direction:column;gap:10px;align-items:stretch;max-width:420px}
+.btn{appearance:none;border:0;border-radius:14px;font:inherit;font-weight:800;font-size:20px;padding:20px 24px;cursor:pointer;text-align:center;text-decoration:none;background:var(--accent);color:var(--accent-ink);display:block;transition:transform .08s ease}
+.btn:active{transform:scale(.985)}
+.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.fine{font-size:14px;color:var(--muted);margin:0}
+/* chat-report demo: the one memorable element */
+.chat{background:var(--surface);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:12px}
+.msg{max-width:88%;padding:12px 14px;border-radius:16px;font-size:15.5px;line-height:1.45}
+.msg.ai{background:var(--bg);border:1px solid var(--line);border-bottom-left-radius:6px;align-self:flex-start}
+.msg.me{background:var(--accent);color:var(--accent-ink);border-bottom-right-radius:6px;align-self:flex-end}
+.report{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:16px;align-self:stretch}
+.report h3{margin:0 0 10px;font-size:15px;font-weight:800}
+.score{font-family:'Unbounded','Manrope',sans-serif;font-size:30px;font-weight:700;line-height:1;margin:0 0 4px}
+.score small{font-family:'Manrope',sans-serif;font-size:14px;font-weight:600;color:var(--muted)}
+.pair{display:grid;grid-template-columns:1fr;gap:4px;padding:10px 0;border-top:1px solid var(--line);font-size:15px}
+.pair .was{color:var(--bad);text-decoration:line-through;text-decoration-thickness:1px}
+.pair .now{color:var(--good);font-weight:700}
+.caption{font-size:13.5px;color:var(--muted);margin:10px 0 0}
+ul.list{list-style:none;padding:0;margin:0}
+ul.list li{padding:14px 0;border-top:1px solid var(--line)}
+ul.list li:last-child{border-bottom:1px solid var(--line)}
+ul.list strong{display:block;font-weight:800;margin-bottom:2px}
+ol.steps{list-style:none;padding:0;margin:0;counter-reset:s}
+ol.steps li{counter-increment:s;position:relative;padding:0 0 18px 48px}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:32px;height:32px;border-radius:16px;background:var(--accent);color:var(--accent-ink);font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;padding:16px 0;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--accent);font-weight:800}
+.faq details[open] summary::after{content:"–"}
+.faq p{margin:0 0 16px;color:var(--muted)}
+.final{background:var(--surface);border-radius:20px;padding:24px 20px}
+.final h2{margin-bottom:10px}
+.final p{margin:0 0 20px;color:var(--muted)}
+footer{font-size:14px;color:var(--muted)}
+footer a{color:var(--accent);font-weight:700}
+@media (prefers-reduced-motion: reduce){.btn{transition:none}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <p class="brand">Manita English School</p>
+
+  <section>
+    <h1>Подружка для розмов англійською</h1>
+    <p class="lede">Готовий промпт для ChatGPT: 10 хвилин живої розмови з «американцем» голосом, а в кінці — розбір, наскільки природно ви звучите і що сказати інакше.</p>
+    <div class="buy">
+      <a class="btn" href="https://buy.stripe.com/9B6aEW54A9dJ36f94f2ch3f">Купити за $5</a>
+      <p class="fine">Разовий платіж. Доступ відкривається одразу після оплати.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Так виглядає розмова</h2>
+    <div class="chat" aria-label="Приклад розмови і звіту">
+      <div class="msg ai">Hey! So what did you get up to this weekend? Anything fun?</div>
+      <div class="msg me">I was at home and I am agree that it was boring.</div>
+      <div class="msg ai">Ha, honestly, sometimes a lazy weekend is exactly what you need. What did you end up doing all day?</div>
+      <div class="report">
+        <h3>Звіт після розмови</h3>
+        <p class="score">6 <small>з 10 — наскільки живо ви звучите, рівень B1</small></p>
+        <div class="pair"><span class="was">I am agree</span><span class="now">Yeah, totally / I agree</span></div>
+        <div class="pair"><span class="was">I was at home</span><span class="now">I just stayed in</span></div>
+        <div class="pair"><span>Для словника: <strong>end up doing</strong> — зрештою щось зробити</span></div>
+      </div>
+    </div>
+    <p class="caption">Приклад. Ваш звіт буде складено за вашою розмовою.</p>
+  </section>
+
+  <section>
+    <h2>Що ви отримаєте</h2>
+    <ul class="list">
+      <li><strong>Готовий промпт</strong>Копіюєте одним натисканням і вставляєте в ChatGPT. Нічого налаштовувати не треба.</li>
+      <li><strong>Розмову, яка підлаштовується під вас</strong>ChatGPT сам визначає ваш рівень і говорить трохи складніше, ніж ви: зрозуміло, але з новими фразами.</li>
+      <li><strong>Звіт українською після кожної розмови</strong>Оцінка від 1 до 10, ваш приблизний рівень, фрази, які звучали «по-підручниковому», і як їх сказав би американець.</li>
+      <li><strong>Сленг і фразові дієслова для словника</strong>5–8 виразів з розмови з поясненням і прикладом.</li>
+      <li><strong>Інструкцію з голосовим режимом</strong>Покроково, зі скріншотами: як говорити з ChatGPT голосом, а не писати.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Кому підійде</h2>
+    <ul class="list">
+      <li>Ви живете в США чи Канаді й розумієте англійську, але говорити поки незручно.</li>
+      <li>Вам немає з ким практикуватись щодня, а помилятися перед людьми ніяково.</li>
+      <li>Ви говорите правильно, але відчуваєте, що звучите як підручник.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Як це працює</h2>
+    <ol class="steps">
+      <li>Оплачуєте $5 — одразу відкривається сторінка з промптом.</li>
+      <li>Копіюєте промпт і вставляєте в ChatGPT.</li>
+      <li>Вмикаєте голосовий режим і 10 хвилин просто розмовляєте.</li>
+      <li>Отримуєте звіт і повторюєте, коли хочете: теми щоразу інші.</li>
+    </ol>
+  </section>
+
+  <section class="faq">
+    <h2>Питання</h2>
+    <details><summary>Потрібна платна версія ChatGPT?</summary><p>Ні, вистачить безкоштовного акаунта.</p></details>
+    <details><summary>Скільки разів можна використовувати?</summary><p>Скільки завгодно. Промпт ваш, кожна розмова буде новою.</p></details>
+    <details><summary>Підійде, якщо мій рівень невисокий?</summary><p>Так. ChatGPT підлаштовується під ваш рівень: з початківцями говорить простіше, з досвідченими — як носій мови.</p></details>
+    <details><summary>Як я отримаю промпт?</summary><p>Одразу після оплати відкриється сторінка з промптом та інструкцією. Збережіть її в закладки, щоб повертатися.</p></details>
+    <details><summary>Це замінює уроки з викладачем?</summary><p>Ні. Це щоденна практика розмови. Щоб системно виправляти помилки, потрібен викладач, який бачить ваш прогрес.</p></details>
+  </section>
+
+  <section class="final">
+    <h2>Почніть говорити вже сьогодні</h2>
+    <p>10 хвилин на день — і англійська перестає бути чимось, що ви лише розумієте.</p>
+    <div class="buy">
+      <a class="btn" href="https://buy.stripe.com/9B6aEW54A9dJ36f94f2ch3f">Купити за $5</a>
+      <p class="fine">Оплата карткою через Stripe.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Manita English School — онлайн-школа англійської для українців у США та Канаді.<br>
+    Хочете займатися з викладачем? <a href="https://forms.gle/BDSm2bbUsdDNRT2x9" target="_blank" rel="noopener">Запис на перший урок</a></p>
+  </footer>
+</main>
+</body>
+</html>
