@@ -90,6 +90,26 @@ footer a{color:var(--accent);font-weight:700}
 .dur{font-size:12.5px;font-weight:700;opacity:.7;margin-left:auto}
 .said{font-size:14px;line-height:1.4;opacity:.85}
 @media (prefers-reduced-motion: reduce){.mic::after{animation:none}}
+
+.cmp{border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.cmp-head,.cmp-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);}
+.cmp-head div{padding:12px 16px;font-size:14px;font-weight:800}
+.cmp-head .plain{color:var(--muted);background:var(--surface)}
+.cmp-head .ours{color:var(--accent-ink);background:var(--accent)}
+.cmp-topic{grid-column:1 / -1;padding:12px 16px 0;font-size:13px;font-weight:800;color:var(--muted);border-top:1px solid var(--line)}
+.cmp-row .plain,.cmp-row .ours{padding:6px 16px 14px;font-size:15px;line-height:1.45}
+.cmp-row .plain{color:var(--muted)}
+.cmp-row .ours{font-weight:600}
+.cmp-row .tag{display:none}
+.cmp-note{font-size:14px;color:var(--muted);margin:12px 0 0}
+.cmp-lede{color:var(--muted);margin:-6px 0 18px}
+@media (max-width:560px){
+  .cmp-head{display:none}
+  .cmp-row{grid-template-columns:1fr}
+  .cmp-row .tag{display:block;font-size:12px;font-weight:800;margin-bottom:2px}
+  .cmp-row .plain{padding-bottom:6px}
+  .cmp-row .ours .tag{color:var(--accent)}
+}
 @media (prefers-reduced-motion: reduce){.btn{transition:none}}
 </style>
 </head>
@@ -122,6 +142,20 @@ footer a{color:var(--accent);font-weight:700}
       </div>
     </div>
     <p class="caption">Приклад. Розмова йде голосом, а звіт ChatGPT пише текстом у кінці, за вашою розмовою.</p>
+  </section>
+
+  <section>
+    <h2>Чим це відрізняється від звичайного ChatGPT</h2>
+    <p class="cmp-lede">ChatGPT той самий. Різниця в тому, як він поводиться в розмові: промпт задає йому чіткі правила.</p>
+    <div class="cmp">
+      <div class="cmp-head"><div class="plain">Звичайний ChatGPT</div><div class="ours">З промптом</div></div>
+      <div class="cmp-row"><div class="cmp-topic">Як говорить</div><div class="plain"><span class="tag">Звичайний ChatGPT</span>Як помічник: зазвичай довгі, правильні, «книжні» відповіді</div><div class="ours"><span class="tag">З промптом</span>Як американець-друг: коротко, розмовно, зі сленгом і фразовими дієсловами</div></div>
+      <div class="cmp-row"><div class="cmp-topic">Як іде розмова</div><div class="plain"><span class="tag">Звичайний ChatGPT</span>Відповідає і чекає, що ви спитаєте далі</div><div class="ours"><span class="tag">З промптом</span>Кожна репліка закінчується питанням до вас, тож розмова не обривається</div></div>
+      <div class="cmp-row"><div class="cmp-topic">Ваш рівень</div><div class="plain"><span class="tag">Звичайний ChatGPT</span>Говорить однаково з усіма</div><div class="ours"><span class="tag">З промптом</span>Підлаштовується: говорить трохи складніше, ніж ви, але зрозуміло</div></div>
+      <div class="cmp-row"><div class="cmp-topic">Помилки</div><div class="plain"><span class="tag">Звичайний ChatGPT</span>Або виправляє кожну дрібницю, або не звертає уваги</div><div class="ours"><span class="tag">З промптом</span>Не перебиває, а розбирає помилки в кінці</div></div>
+      <div class="cmp-row"><div class="cmp-topic">Після розмови</div><div class="plain"><span class="tag">Звичайний ChatGPT</span>Розмова закінчилась — і все</div><div class="ours"><span class="tag">З промптом</span>Звіт українською: оцінка, рівень, фрази як з підручника і як сказати природно, слова для словника</div></div>
+    </div>
+    <p class="cmp-note">Такі правила можна підібрати й самостійно, але на це йде чимало спроб. Промпт — це вже готовий і перевірений набір.</p>
   </section>
 
   <section>
