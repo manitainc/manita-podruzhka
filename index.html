@@ -111,6 +111,24 @@ footer a{color:var(--accent);font-weight:700}
   .cmp-row .ours .tag{color:var(--accent)}
 }
 @media (prefers-reduced-motion: reduce){.btn{transition:none}}
+
+/* social proof */
+.reviews{display:grid;gap:14px}
+.rev{background:var(--surface);border-radius:20px;padding:18px 18px 16px}
+.rev .msg{max-width:100%;font-size:16px;line-height:1.5;background:var(--bg);border:1px solid var(--line);border-bottom-left-radius:6px}
+.rev .msg p{margin:0 0 8px}
+.rev .msg p:last-child{margin:0}
+.rev mark{background:var(--bubble);color:inherit;padding:1px 4px;border-radius:5px;font-weight:700}
+.rev .src{font-size:13px;color:var(--muted);margin:10px 2px 0}
+.full-report{display:grid;gap:12px}
+.full-report .report{padding:18px}
+.rlabel{font-size:12.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+.rnote{font-size:15px;margin:8px 0 0;color:var(--muted)}
+.good{display:inline;background:color-mix(in srgb,var(--good) 14%,transparent);color:var(--ink);font-weight:700;padding:2px 6px;border-radius:6px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.full-report .pair .was{text-decoration:none;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14.5px;font-weight:600}
+.proof-buy{margin-top:20px}
 </style>
 </head>
 <body>
@@ -142,6 +160,56 @@ footer a{color:var(--accent);font-weight:700}
       </div>
     </div>
     <p class="caption">Приклад. Розмова йде голосом, а звіт ChatGPT пише текстом у кінці, за вашою розмовою.</p>
+  </section>
+
+  <section>
+    <h2>Що кажуть ті, хто вже спробував</h2>
+    <div class="reviews">
+      <figure class="rev" style="margin:0">
+        <div class="msg">
+          <p>Але це прям класно!</p>
+          <p>Я відповідала не дуже старанно, зробила купу помилок. <mark>Він мені все розібрав, пояснив, дав нову лексику.</mark></p>
+          <p>Реально супер! <mark>Навіть ці 10 хвилин дуже корисні!</mark> Величезна вдячність за таку класну штуку!</p>
+        </div>
+        <figcaption class="src">Відгук у директі Instagram</figcaption>
+      </figure>
+      <figure class="rev" style="margin:0">
+        <div class="msg">
+          <p>Дякую за те що поділилися. <mark>Тепер точно відмазок не буде</mark></p>
+        </div>
+        <figcaption class="src">Відгук у директі Instagram</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Такий звіт приходить після 10 хвилин розмови</h2>
+    <p class="cmp-lede">Справжній розбір після однієї розмови з подружкою.</p>
+    <div class="full-report">
+      <div class="report">
+        <p class="rlabel">Наскільки живо ви звучите</p>
+        <p class="score">6/10 <small>рівень B1</small></p>
+        <p class="rnote">Вас легко зрозуміти, але іноді ви дослівно перекладаєте з української.</p>
+      </div>
+      <div class="report">
+        <p class="rlabel">Що вийшло добре</p>
+        <p style="margin:0"><span class="good">“It depends on the weather and our plans”</span></p>
+        <p class="rnote">Так справді говорять. І ви не обмежувалися відповідями «так» і «ні».</p>
+      </div>
+      <div class="report">
+        <p class="rlabel">Звучало як з підручника</p>
+        <div class="pair"><span class="was">I’m a fan of medical TV series</span><span class="now">→ I’m into medical dramas</span></div>
+        <div class="pair"><span class="was">Thank you for asking me</span><span class="now">→ Thanks for asking!</span></div>
+      </div>
+      <div class="report">
+        <p class="rlabel">Нові вирази для словника</p>
+        <div class="chips"><span>take it easy</span><span>unwind</span><span>binge-watch</span><span>give it a try</span></div>
+      </div>
+    </div>
+    <div class="buy proof-buy">
+      <a class="btn" href="https://buy.stripe.com/eVqeVc2Ws2PlayH80b2ch3g">Купити за $5</a>
+      <p class="fine">Разовий платіж. Доступ відкривається одразу після оплати.</p>
+    </div>
   </section>
 
   <section>
