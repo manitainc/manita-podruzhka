@@ -113,13 +113,23 @@ footer a{color:var(--accent);font-weight:700}
 @media (prefers-reduced-motion: reduce){.btn{transition:none}}
 
 /* social proof */
-.reviews{display:grid;gap:14px}
-.rev{background:var(--surface);border-radius:20px;padding:18px 18px 16px}
-.rev .msg{max-width:100%;font-size:16px;line-height:1.5;background:var(--bg);border:1px solid var(--line);border-bottom-left-radius:6px}
+.reviews{display:grid;gap:12px}
+.rev{display:grid;grid-template-columns:36px minmax(0,1fr);gap:10px;align-items:end;margin:0}
+.ava{width:36px;height:36px;border-radius:18px;background:var(--bubble);color:var(--accent);font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center}
+.rev .msg{max-width:100%;font-size:16px;line-height:1.5;background:var(--surface);border:0;border-bottom-left-radius:6px;margin:0}
 .rev .msg p{margin:0 0 8px}
 .rev .msg p:last-child{margin:0}
-.rev mark{background:var(--bubble);color:inherit;padding:1px 4px;border-radius:5px;font-weight:700}
-.rev .src{font-size:13px;color:var(--muted);margin:10px 2px 0}
+.rev mark,.quote mark{background:var(--bubble);color:inherit;padding:1px 4px;border-radius:5px;font-weight:700;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.rev .src{grid-column:2;font-size:13px;color:var(--muted);margin:2px 2px 0}
+.more-rev{margin-top:4px}
+.more-rev summary{cursor:pointer;list-style:none;font-weight:700;color:var(--accent);font-size:15px;padding:6px 0}
+.more-rev summary::-webkit-details-marker{display:none}
+.more-rev[open] summary{margin-bottom:12px}
+.quote{margin:0;padding:12px 14px;border-left:3px solid var(--accent);background:var(--surface);border-radius:0 12px 12px 0;font-size:15.5px;line-height:1.45}
+.quote cite{display:block;font-style:normal;font-size:13px;color:var(--muted);margin-top:4px}
+.hero-quote{max-width:420px;margin-top:18px}
+.steps-quote{margin-top:6px}
+.final .quote{background:var(--bg);margin:0 0 20px}
 .full-report{display:grid;gap:12px}
 .full-report .report{padding:18px}
 .rlabel{font-size:12.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
@@ -142,6 +152,7 @@ footer a{color:var(--accent);font-weight:700}
       <a class="btn" href="https://buy.stripe.com/eVqeVc2Ws2PlayH80b2ch3g">Купити за $5</a>
       <p class="fine">Разовий платіж. Доступ відкривається одразу після оплати.</p>
     </div>
+    <blockquote class="quote hero-quote">«<mark>Це саме те, чого мені не вистачало</mark> для покращення speaking»<cite>Інна, відгук в Instagram</cite></blockquote>
   </section>
 
   <section>
@@ -165,21 +176,49 @@ footer a{color:var(--accent);font-weight:700}
   <section>
     <h2>Що кажуть ті, хто вже спробував</h2>
     <div class="reviews">
-      <figure class="rev" style="margin:0">
+      <figure class="rev">
+        <div class="ava" aria-hidden="true">Н</div>
         <div class="msg">
-          <p>Але це прям класно!</p>
-          <p>Я відповідала не дуже старанно, зробила купу помилок. <mark>Він мені все розібрав, пояснив, дав нову лексику.</mark></p>
-          <p>Реально супер! <mark>Навіть ці 10 хвилин дуже корисні!</mark> Величезна вдячність за таку класну штуку!</p>
+          <p>Хотіла подякувати за подружку, дійсно, як круто <mark>вона підлаштовується під тебе, як розмова зі справжньою людиною.</mark></p>
+          <p><mark>Трохи бекаю-мекаю, але вона і тут підтримує.</mark> Дуже вдячна.</p>
         </div>
-        <figcaption class="src">Відгук у директі Instagram</figcaption>
+        <figcaption class="src">Наталія, відгук в Instagram</figcaption>
       </figure>
-      <figure class="rev" style="margin:0">
+      <figure class="rev">
+        <div class="ava" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></div>
         <div class="msg">
-          <p>Дякую за те що поділилися. <mark>Тепер точно відмазок не буде</mark></p>
+          <p>Але це прям класно! Я відповідала не дуже старанно, зробила купу помилок. <mark>Він мені все розібрав, пояснив, дав нову лексику.</mark></p>
+          <p>Реально супер! <mark>Навіть ці 10 хвилин дуже корисні!</mark></p>
         </div>
-        <figcaption class="src">Відгук у директі Instagram</figcaption>
+        <figcaption class="src">Відгук в Instagram</figcaption>
+      </figure>
+      <figure class="rev">
+        <div class="ava" aria-hidden="true">Т</div>
+        <div class="msg">
+          <p>Ой, ну це дуже-дуже круто, я в захваті! Щиро дякую, що створили таку подругу: <mark>з нею дуже легко розмовляти, і я не хвилююсь, що скажу неправильно.</mark></p>
+        </div>
+        <figcaption class="src">Таня, відгук в Instagram</figcaption>
       </figure>
     </div>
+    <details class="more-rev">
+      <summary>Ще відгуки</summary>
+      <div class="reviews">
+        <figure class="rev">
+          <div class="ava" aria-hidden="true">В</div>
+          <div class="msg">
+            <p><mark>Отримала купу задоволення, хотіла говорити з нею ще.</mark> Це супер продукт, мені дуже сподобався.</p>
+          </div>
+          <figcaption class="src">Вікторія, відгук в Instagram</figcaption>
+        </figure>
+        <figure class="rev">
+          <div class="ava" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></div>
+          <div class="msg">
+            <p>Дякую за те, що поділилися. <mark>Тепер точно відмазок не буде.</mark></p>
+          </div>
+          <figcaption class="src">Відгук в Instagram</figcaption>
+        </figure>
+      </div>
+    </details>
   </section>
 
   <section>
@@ -254,6 +293,7 @@ footer a{color:var(--accent);font-weight:700}
       <li>Вмикаєте голосовий режим і 10 хвилин розмовляєте вголос, як з людиною.</li>
       <li>Отримуєте звіт і повторюєте, коли хочете: теми щоразу інші.</li>
     </ol>
+    <blockquote class="quote steps-quote">«Дякую, <mark>все працює</mark>, мені подобається»<cite>Вікторія, відгук в Instagram</cite></blockquote>
   </section>
 
   <section class="faq">
@@ -268,6 +308,7 @@ footer a{color:var(--accent);font-weight:700}
   <section class="final">
     <h2>Почніть говорити вже сьогодні</h2>
     <p>10 хвилин на день — і англійська перестає бути чимось, що ви лише розумієте.</p>
+    <blockquote class="quote">«Ну це супер! <mark>Поговорила вже кілька разів, і буду часто говорити</mark>, дуже сподобалось»<cite>Відгук в Instagram</cite></blockquote>
     <div class="buy">
       <a class="btn" href="https://buy.stripe.com/eVqeVc2Ws2PlayH80b2ch3g">Купити за $5</a>
       <p class="fine">Оплата карткою через Stripe.</p>
